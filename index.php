@@ -4,27 +4,35 @@
     ini_set('display_startup_errors', '1');
     error_reporting(E_ALL);
 
-    $stringOne = 'my email is ';
-    $stringTwo = 'mario123@thenetninja.co.uk';
+    $radius = 25;
+    $pi = 3.14;
+    
+    // basic - *, /, +, -, **
 
-    // echo $stringOne.$stringTwo;
+    // echo $pi * $radius^2;
 
-    $name = 'mario';
+    // order of operation ( B I D M A S )
 
-    // echo 'Hey, my name is ' . $name;
+    // echo 2 * (4 + 9) / 3;
 
-    // echo "Hey my name is $name";
+    // increment & decrement operators
 
-    // echo "the ninja screamed \"whaaa.\"";
-    // echo 'the ninjas screamed "whaaa"';
+    // echo $radius--;
+    // echo $radius;
 
-    // echo $name[1];
+    // shorthand operators
 
-    // echo strlen($name);
-    // echo strtoupper($name);
-    // echo strtolower($name);
-    echo str_replace('m','w',$name);
+    $age = 20;
 
+    //$age -= 10;
+    //$age *= 2;
+    //echo $age;
+
+    // number functions
+
+    //echo floor($pi);
+    //echo ceil($pi);
+    echo pi();
 ?>
 
 <!DOCTYPE html>
