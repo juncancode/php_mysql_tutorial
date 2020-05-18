@@ -4,35 +4,35 @@
     ini_set('display_startup_errors', '1');
     error_reporting(E_ALL);
 
-    $radius = 25;
-    $pi = 3.14;
-    
-    // basic - *, /, +, -, **
+    // indexed arrays
+    $peopleOne = ['shaun','crystal','ryu'];    
+    //echo $peopleOne[1];
+    $peopleTwo = array('ken','chun-li');
+    // echo $peopleTwo[1];
+    $ages = [20,30,40,50];
+    // print_r($ages);
+    $ages[1] = 25;
+    // print_r($ages);
+    $ages[] = 60;
+    // print_r($ages);
+    array_push($ages, 70);
+    // print_r($ages);
+    // echo count($ages);
+    $peopleThree = array_merge($peopleOne, $peopleTwo);
+    // print_r($peopleThree);
 
-    // echo $pi * $radius^2;
 
-    // order of operation ( B I D M A S )
-
-    // echo 2 * (4 + 9) / 3;
-
-    // increment & decrement operators
-
-    // echo $radius--;
-    // echo $radius;
-
-    // shorthand operators
-
-    $age = 20;
-
-    //$age -= 10;
-    //$age *= 2;
-    //echo $age;
-
-    // number functions
-
-    //echo floor($pi);
-    //echo ceil($pi);
-    echo pi();
+    // associative arrays (key & value pairs)
+    $ninjasOne = ['shaun' => 'black','mario' => 'red', 'luigi' => 'green'];
+    // echo $ninjasOne['mario'];
+    // print_r($ninjasOne);
+    $ninjasTwo = array('browser' => 'brown', 'peach' => 'pink','toad' => 'pink');
+    // print_r($ninjasTwo);
+    $ninjasTwo['peach'] = 'yellow';
+    // print_r($ninjasTwo);
+    //echo count($ninjasOne);
+    $ninjasThree = array_merge($ninjasOne, $ninjasTwo);
+    print_r($ninjasThree);
 ?>
 
 <!DOCTYPE html>
