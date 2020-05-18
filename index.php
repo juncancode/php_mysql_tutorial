@@ -1,16 +1,29 @@
 <?php 
 
-ini_set('display_errors', '1');
-ini_set('display_startup_errors', '1');
-error_reporting(E_ALL);
+    ini_set('display_errors', '1');
+    ini_set('display_startup_errors', '1');
+    error_reporting(E_ALL);
 
-define('NAME','Yoshi');
+    $stringOne = 'my email is ';
+    $stringTwo = 'mario123@thenetninja.co.uk';
 
- //$name = "Yoshi";
- $age = 34;
+    // echo $stringOne.$stringTwo;
 
- //$name = "Jun";
- 
+    $name = 'mario';
+
+    // echo 'Hey, my name is ' . $name;
+
+    // echo "Hey my name is $name";
+
+    // echo "the ninja screamed \"whaaa.\"";
+    // echo 'the ninjas screamed "whaaa"';
+
+    // echo $name[1];
+
+    // echo strlen($name);
+    // echo strtoupper($name);
+    // echo strtolower($name);
+    echo str_replace('m','w',$name);
 
 ?>
 
@@ -23,10 +36,6 @@ define('NAME','Yoshi');
 </head>
 <body>
 
-    <h1>User Profile Page</h1>
-
-    <div><?php echo NAME; ?></div>
-    <div><?php echo $age?></div>
     
 </body>
 </html>
