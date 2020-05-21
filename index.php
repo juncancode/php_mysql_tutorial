@@ -4,32 +4,37 @@
     ini_set('display_startup_errors', '1');
     error_reporting(E_ALL);
 
-    // comparisons booleans (true or false)
-    // echo true; "1" 
-    // echo false; ""
+    // comparisons statements
 
-    // numbers  
-    // echo 5 > 10;
-    // echo 5 == 10;
-    // echo 10 == 10;
-    // echo 5 != 10;
-    //echo 5 <= 5;
-    // echo 5 >= 5;
+    // $price = 20;
 
-    // strings
-    //echo 'shaun' < 'yoshi';
-    //echo 'shaun' > 'yoshi';
-    //echo 'shaun' > 'Shaun';
-    //echo 'mario' == 'mario';
-    //echo 'mario' == "Mario";
- 
-    // loose vs strict equal comparison
-   // echo 5 == '5';
-   // echo 5 === '5';
-   // echo 5 === 5;
+    // if($price < 10){
+    //     echo 'the condition is met';
+    // } else if ($price < 30){
+    //     echo 'elseif condition met';
+    // } else {
+    //     echo 'the condition not met';
+    // }
 
-    // echo true == "1";
-    echo false == "";
+    $products = [
+		['name' => 'shiny star', 'price' => 20],
+		['name' => 'green shell', 'price' => 10],
+		['name' => 'red shell', 'price' => 15],
+		['name' => 'gold coin', 'price' => 5],
+		['name' => 'lightning bolt', 'price' => 40],
+		['name' => 'banana skin', 'price' => 2]
+    ];
+
+    foreach($products as $product){
+        // if($product['price'] < 15 && $product['price'] > 2){
+        //     echo $product['name'] . '<br/>';
+        // }
+
+        // if($product['price'] > 20 || $product['price'] < 10){
+        //     echo $product['name'] . '<br/>';
+        // }
+    }
+
 ?>
  
 <!DOCTYPE html>
@@ -37,10 +42,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PHP Tutorials | Booleans & Comparisons</title>
+    <title>PHP Tutorials | Conditional Statements</title>
 </head>
 <body>
-
+    <div>
+        <ul>
+            <?php foreach($products as $product){ ?>
+                <?php if($product['price'] > 15){?>
+                    <li><?php echo $product['name'];?></li>
+                <?php }?>
+            <?php  } ?>
+        </ul>
+    </div>
 
 </body>
 </html>
