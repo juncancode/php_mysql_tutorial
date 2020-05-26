@@ -3,21 +3,45 @@
     ini_set('display_errors', '1');
     ini_set('display_startup_errors', '1');
     error_reporting(E_ALL);
-    //functions
-    function sayHello($name = 'Jun',$time = 'morning'){
-        echo "Good $time $name";
-    } 
+    // variable scope
 
-    // sayHello('mario');
-    sayHello('yoshi','night');
+    // local vars
 
-    function formatProduct($product){
-        //echo "{$product['name']} costs {$product['price']} to buy <br />";
-        return "{$product['name']} costs {$product['price']} to buy <br />";
-    };
+    function myFunc(){
+        $price = 10;
+        echo $price;
+    }
 
-    // $formatted = formatProduct(['name'=> 'gold star','price'=> 20]);
-    // echo $formatted;
+    // myFunc();
+    // echo $price;
+
+    function myFuncTwo($age){
+        echo $age;
+    }
+
+    // myFuncTwo(25);
+    // echo $age;
+
+    // global variables
+
+    $name = 'mario';
+
+    // function sayHello(){
+    //     global $name;
+    //     $name = 'yoshi';
+    //     echo "hello $name";
+    // }
+
+    // sayHello();
+    // echo $name;
+    // & updates the local varaible
+    function sayBye(&$name){
+        $name = 'wario';
+        echo "bye $name";
+    }
+    
+    sayBye($name);
+    echo $name;
 ?>
  
 <!DOCTYPE html>
@@ -25,7 +49,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PHP Tutorials | Conditional Statements</title>
+    <title>PHP Tutorials | Variable Scope</title>
 </head>
 <body>
 
