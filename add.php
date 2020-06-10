@@ -4,16 +4,18 @@
     ini_set('display_startup_errors', '1');
     error_reporting(E_ALL);
 
+    // Visible
     // if(isset($_GET['submit'])){
     //     echo $_GET['email'];
     //     echo $_GET['title'];
     //     echo $_GET['ingredients'];
     // }
 
+    // Invisible
     if(isset($_POST['submit'])){
-        echo $_POST['email'];
-        echo $_POST['title'];
-        echo $_POST['ingredients'];
+        echo htmlspecialchars ($_POST['email']);
+        echo htmlspecialchars ($_POST['title']);
+        echo htmlspecialchars ($_POST ['ingredients']);
     }
 
 ?>
