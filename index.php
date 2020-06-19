@@ -39,7 +39,7 @@
     
     <div class="container">
         <div class="row">
-            <?php foreach($pizzas as $pizza):{?>
+            <?php foreach($pizzas as $pizza):?>
                 <div class="col s6 md3">
                     <div class="card z-depth-0">
                         <div class="card-content center">
@@ -56,7 +56,7 @@
                     </div>
                 </div>
             <?php endforeach; ?>
-            
+
             <?php if(count($pizzas) >= 3): ?>
                 <p>there are 2 or more pizzas</p>
             <?php  else: ?>
