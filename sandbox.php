@@ -18,7 +18,7 @@ if(isset($_POST['submit'])) {
 
     $_SESSION['name'] = $_POST['name'];
 
-    echo $_SESSION['name'];
+    // echo $_SESSION['name'];
 
     header('Location:index.php');
 }
