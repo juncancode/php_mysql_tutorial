@@ -14,11 +14,13 @@
 
 // sessions
 if(isset($_POST['submit'])) {
+
+    // Cookie for gender
+    setcookie('gender', $_POST['gender'], time() + 86400);
+
     session_start();
 
     $_SESSION['name'] = $_POST['name'];
-
-    // echo $_SESSION['name'];
 
     header('Location:index.php');
 }
@@ -35,6 +37,10 @@ if(isset($_POST['submit'])) {
 <body>
     <form action="<?php echo $_SERVER['PHP_SELF']?>" method="post">
         <input type="text" name="name">
+        <select name="gender" id="">
+            <option value="male">male</option>
+            <option value="female">female</option>
+        </select>
         <input type="submit" name="submit" value="submit">
     </form>
 </body>
