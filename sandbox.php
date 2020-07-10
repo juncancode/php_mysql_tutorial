@@ -1,47 +1,51 @@
 <?php 
 
+ini_set('display_errors', '1');
+ini_set('display_startup_errors', '1');
+error_reporting(E_ALL);
 
-// superglobals
+// classes
+class User {
 
-// $_GET['name], $_POST['name]
+    private $email;
+    private $name;
 
-// echo $_SERVER['SERVER_NAME'] . '<br/>';
-// echo $_SERVER['REQUEST_METHOD'] . '<br/>';
-// echo $_SERVER['SCRIPT_FILENAME'] . '<br/>';
-// echo $_SERVER['PHP_SELF'] . '<br/>';
+    public function __construct($name, $email){
+        // $this -> email = 'keyos27@gmail.com';
+        // $this -> name = 'Jun';
+        $this -> email = $email;
+        $this -> name = $name;
+    }
 
-// $_SESSION, $_COOKIE
+    public function login(){
+        // echo 'the user logged in';
+        echo $this -> name . ' logged in';
+    }
 
-// sessions
-if(isset($_POST['submit'])) {
-
-    // Cookie for gender
-    setcookie('gender', $_POST['gender'], time() + 86400);
-
-    session_start();
-
-    $_SESSION['name'] = $_POST['name'];
-
-    header('Location:index.php');
+    public function getName(){
+        return $this->name;
+    }
+    public function setName($name){
+        if(is_string($name) && strlen($name) > 1){
+            $this->name = $name;
+            return "name has been updated to $name";
+        } else {
+            return 'not a valid name';
+        }
+    }
 }
+
+// $userOne = new User();
+
+// $userOne -> login();
+// echo $userOne -> email;
+
+$userTwo = new User('yoshi','yoshi@nintendo.com');
+
+// echo $userTwo -> getName();
+// echo $userTwo -> setName(50);
+echo $userTwo -> setName('Jun');
+echo $userTwo -> getName();
 
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PHP Tutorials</title>
-</head>
-<body>
-    <form action="<?php echo $_SERVER['PHP_SELF']?>" method="post">
-        <input type="text" name="name">
-        <select name="gender" id="">
-            <option value="male">male</option>
-            <option value="female">female</option>
-        </select>
-        <input type="submit" name="submit" value="submit">
-    </form>
-</body>
-</html>
